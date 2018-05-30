@@ -1,6 +1,6 @@
 # mockser
 
-mockser description here
+Server to test http clients
 
 [![Build Status][travis-image]][travis-url]
 [![NPM version][npm-image]][npm-url]
@@ -13,9 +13,7 @@ npm i mockser
 
 ## Usage
 
-```js
-const mockser = require('mockser');
-```
+_See example in test_
 
 ## License
 
