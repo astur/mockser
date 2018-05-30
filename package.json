@@ -1,8 +1,7 @@
 {
-  "private": true,
   "name": "mockser",
   "version": "0.0.0",
-  "description": "",
+  "description": "Server to test http clients",
   "main": "index.js",
   "author": "astur <astur@yandex.ru> (http://kozlov.am/)",
   "scripts": {
@@ -23,7 +22,10 @@
     "scra": "^0.2.7"
   },
   "keywords": [
-    "mockser"
+    "test",
+    "testing",
+    "http",
+    "server"
   ],
   "license": "MIT"
 }
