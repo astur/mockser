@@ -1,6 +1,6 @@
 {
   "name": "mockser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Server to test http clients",
   "main": "index.js",
   "author": "astur <astur@yandex.ru> (http://kozlov.am/)",
