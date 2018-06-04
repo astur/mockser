@@ -1,6 +1,6 @@
 # mockser
 
-Server to test http clients
+Server to test http clients. 
 
 [![Build Status][travis-image]][travis-url]
 [![NPM version][npm-image]][npm-url]
@@ -10,6 +10,15 @@ Server to test http clients
 ```bash
 npm i mockser
 ```
+
+## Features
+
+Actually it is old good core [http/https].createServer with few improvements.
+
+* `listen` and `close` methods are promisified, so you can just `await` them in before-all and after-all sections of tests respectively.
+* on every response server emits event named same as responsed path, so just write handlers for routs.
+* by default `mocker` creates 'http' server but you may call it with options object and create `https` server, for example with `{key, cert}` pair of your choice.
+* nothing more. Yes, it's so easy.
 
 ## Usage
 
