@@ -1,4 +1,4 @@
-const scra = require('scra');
+const got = require('got');
 const pem = require('pem');
 const promisify = require('util').promisify;
 const test = require('ava');
@@ -32,14 +32,14 @@ test.before('setup', async () => {
 
 test('main', async t => {
     // HTTP
-    const p = scra(httpUrl);
+    const p = got(httpUrl);
     await t.notThrows(p);
     const response = await p;
     t.is(response.statusCode, 200);
     t.is(response.body, 'ok');
 
     // HTTPS
-    const ps = scra(httpsUrl);
+    const ps = got(httpsUrl);
     await t.notThrows(ps);
     const responseS = await ps;
     t.is(responseS.statusCode, 200);
