@@ -1,24 +1,32 @@
 # mockser
 
-Server to test http clients. 
+Server to test http clients. Actually it is old good core [http/https].createServer with few improvements.
 
 [![Build Status][travis-image]][travis-url]
 [![NPM version][npm-image]][npm-url]
+
+## Why?
+
+Because we need something to test our http-clients, scrapers, bots and so on. On the moment there are three solutions:
+
+* some people make requests to online endpoints like [httpbin](http://httpbin.org). So they need to be online when testing.
+* others use so complicated things as [nock](https://github.com/node-nock/nock) with all their pluses and minuses (numerous and well-documented).
+* and in most real cases people write their own http-servers (right in test code or in 'helpers'). Such servers are not properly tested or documented so work with tests became too hard.
+
+This server is easy, handy, tested and don't need more documentation. And it is open to your issues if you need something more.
+
+## Features
+
+* `listen` and `close` methods are promisified, so you can just `await` them in before-all and after-all sections of tests respectively.
+* on every response server emits event named same as responsed path, so just write handlers for routs.
+* by default `mocker` creates 'http' server but you may call it with options object and create `https` server, for example with `{key, cert}` pair of your choice.
+* nothing more. Yes, it's so easy.
 
 ## Install
 
 ```bash
 npm i mockser
 ```
-
-## Features
-
-Actually it is old good core [http/https].createServer with few improvements.
-
-* `listen` and `close` methods are promisified, so you can just `await` them in before-all and after-all sections of tests respectively.
-* on every response server emits event named same as responsed path, so just write handlers for routs.
-* by default `mocker` creates 'http' server but you may call it with options object and create `https` server, for example with `{key, cert}` pair of your choice.
-* nothing more. Yes, it's so easy.
 
 ## Usage
 
