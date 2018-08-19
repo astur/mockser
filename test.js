@@ -7,8 +7,8 @@ const m = require('.');
 const createCertificate = promisify(pem.createCertificate);
 const httpUrl = 'http://localhost:1703';
 const httpsUrl = 'https://localhost:1147';
-let s;
-let ss;
+let s = null;
+let ss = null;
 
 test.before('setup', async () => {
     // HTTP
